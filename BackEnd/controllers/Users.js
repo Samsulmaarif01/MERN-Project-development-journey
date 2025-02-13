@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler');
 const User = require('../models/User');
 
 const usersCtrl = {
-    // register
+    // !register
     register: asyncHandler( async(req, res) => {
         const { username, email, password } = req.body;
         // const user = await User
@@ -35,6 +35,7 @@ const usersCtrl = {
             id: userCreated._id,
         });
     }),
+    // ! Login
     login: asyncHandler(async(req, res)=>{
         const {email, password} = req.body
         // !Check if user email exists
@@ -60,7 +61,13 @@ const usersCtrl = {
             // password: user.password,
             id: user._id,
         });
-    })
+    }),
+    // ! Profile
+    profile: asyncHandler(async(req, res)=>{
+        res.json({
+            message:"welcome to your profile"
+        });
+    }),
 };
 
 
