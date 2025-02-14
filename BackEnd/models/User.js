@@ -35,6 +35,8 @@ const userSchema = new Schema({
         ref: 'Course'
     }],
     lastLogin: Date
+},{
+    timestamps: true,  
 });
 
 

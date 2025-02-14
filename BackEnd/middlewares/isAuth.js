@@ -14,7 +14,7 @@ const isAuthenticated = async(req, res, next) => {
         
     });
     if(verifyToken){
-        console.log(verifyToken.id);
+       
         // !save user into req obj
         req.user = verifyToken.id;
         next();
